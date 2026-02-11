@@ -16,12 +16,32 @@ const loadLevelWord = (id) => {
 
 displayLevelWord = (words) => {
   console.log(words);
-    const wordContainer = document.getElementById("word-container")
-    wordContainer.innerHTML = ""
-    words.forEach((word) => {
-         console.log(word)
-    })
+  const wordContainer = document.getElementById("word-container");
+  wordContainer.innerHTML = "";
+  words.forEach((word) => {
+    console.log(word);
+    const wordCard = document.createElement("div");
+    wordCard.innerHTML = `
+         <div
+          wordCard
+          class="bg-white rounded-xl shadow-sm text-center py-18 px-5 space-y-4"
+        >
+          <h3 class="light-black font-bold text-2xl">hello</h3>
+          <p class="font-semibold">meaning /pronunciation</p>
+          <div class="font-medium text-2xl font-bangla">"আগ্রহী / ইগার"</div>
+          <div class="flex justify-between">
+            <button class="btn bg-[#1a90ff18] hover:bg-[#1a90ff70]"><i class="fa-solid fa-circle-info"></i></button>
 
+            <button class="btn bg-[#1a90ff18] hover:bg-[#1a90ff70]"><i class="fa-solid fa-volume-high"></i></button>
+          </div>
+        </div>
+         
+         
+         
+         
+         `;
+    wordContainer.append(wordCard);
+  });
 };
 
 const displayLessons = (lessons) => {
