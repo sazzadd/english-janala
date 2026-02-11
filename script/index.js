@@ -26,19 +26,16 @@ displayLevelWord = (words) => {
           wordCard
           class="bg-white rounded-xl shadow-sm text-center py-18 px-5 space-y-4"
         >
-          <h3 class="light-black font-bold text-2xl">hello</h3>
+          <h3 class="light-black font-bold text-2xl">${word.word}</h3>
           <p class="font-semibold">meaning /pronunciation</p>
-          <div class="font-medium text-2xl font-bangla">"আগ্রহী / ইগার"</div>
+          <div class="font-medium text-2xl font-bangla">${word.meaning} / ${word.pronunciation}</div>
           <div class="flex justify-between">
             <button class="btn bg-[#1a90ff18] hover:bg-[#1a90ff70]"><i class="fa-solid fa-circle-info"></i></button>
 
             <button class="btn bg-[#1a90ff18] hover:bg-[#1a90ff70]"><i class="fa-solid fa-volume-high"></i></button>
           </div>
         </div>
-         
-         
-         
-         
+  
          `;
     wordContainer.append(wordCard);
   });
