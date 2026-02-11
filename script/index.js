@@ -18,6 +18,16 @@ displayLevelWord = (words) => {
   console.log(words);
   const wordContainer = document.getElementById("word-container");
   wordContainer.innerHTML = "";
+  if (words.length == 0) {
+    wordContainer.innerHTML = `<div class="col-span-full py-10">
+          <h6 class="text-xl font-bangla text-center mb-5">
+            এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।
+          </h6>
+          <h2 class="text-4xl font-bangla text-center">
+            নেক্সট Lesson এ যান
+          </h2>
+        </div>`;
+  }
   words.forEach((word) => {
     console.log(word);
     const wordCard = document.createElement("div");
@@ -26,9 +36,9 @@ displayLevelWord = (words) => {
           wordCard
           class="bg-white rounded-xl shadow-sm text-center py-18 px-5 space-y-4"
         >
-          <h3 class="light-black font-bold text-2xl">${word.word}</h3>
+          <h3 class="light-black font-bold text-2xl">${word.word ? word.word : "শব্দ পাওয়া যায়নি"}</h3>
           <p class="font-semibold">meaning /pronunciation</p>
-          <div class="font-medium text-2xl font-bangla">${word.meaning} / ${word.pronunciation}</div>
+          <div class="font-medium text-2xl font-bangla">${word.meaning ? word.meaning : " শব্দার্থ পাওয়া যায়নি"} / ${word.pronunciation ? word.pronunciation : "Pronunciation পাওয়া যায়নি"}</div>
           <div class="flex justify-between">
             <button class="btn bg-[#1a90ff18] hover:bg-[#1a90ff70]"><i class="fa-solid fa-circle-info"></i></button>
 
