@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>English janala</title>
+    <title>Tasin English janala</title>
     <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon" />
     <!-- tailwind DaisyUI  -->
     <link
@@ -79,7 +79,7 @@
             </ul>
           </div>
           <a class="btn btn-ghost text-xl">
-            <span>English</span>
+            <span>Tasin </span><span>English</span>
             <span>
               <img src="./assets/logo.png" alt="logo" />
             </span>
@@ -144,11 +144,6 @@
     <section class="bg-gray-200 w-11/12 mx-auto p-10 rounded-xl mt-8">
       <div id="word-container" class="grid grid-cols-3 gap-6">
         <div class="col-span-full py-10">
-          <span class="text-center flex justify-center"
-            ><i
-              class="fa-solid text-7xl text-yellow-300 mb-5 text-center fa-triangle-exclamation"
-            ></i
-          ></span>
           <h6 class="text-xl font-bangla text-center mb-5">
             আপনি এখনো কোনো লেসন সিলেক্ট করেননি।
           </h6>
@@ -158,6 +153,26 @@
         </div>
       </div>
     </section>
+
+    <!-- modal -->
+
+<!-- Open the modal using ID.showModal() method -->
+<button class="btn" onclick="my_modal_5.showModal()">open modal</button>
+<dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+    <div class="details-container">
+      
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+
     <!-- js file -->
     <script src="./script/index.js"></script>
   </body>
