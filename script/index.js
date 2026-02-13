@@ -52,6 +52,7 @@ displayLevelWord = (words) => {
           </h2>
         </div>`;
   }
+  // loadWordDetail(${word.id})
   words.forEach((word) => {
     // console.log(word);
     const wordCard = document.createElement("div");
@@ -64,8 +65,9 @@ displayLevelWord = (words) => {
           <p class="font-semibold">meaning /pronunciation</p>
           <div class="font-medium text-2xl font-bangla">${word.meaning ? word.meaning : " শব্দার্থ পাওয়া যায়নি"} / ${word.pronunciation ? word.pronunciation : "Pronunciation পাওয়া যায়নি"}</div>
           <div class="flex justify-between">
-            <button id="" onclick ="loadWordDetail(${word.id})" class="btn bg-[#1a90ff18] hover:bg-[#1a90ff70]"><i class="fa-solid fa-circle-info"></i></button>
-
+          
+          <button id="" onclick ="loadWordDetail(${word.id})" class="btn bg-[#1a90ff18] hover:bg-[#1a90ff70]"><i class="fa-solid fa-circle-info"></i></button>
+          
             <button class="btn bg-[#1a90ff18] hover:bg-[#1a90ff70]"><i class="fa-solid fa-volume-high"></i></button>
           </div>
         </div>
@@ -108,7 +110,8 @@ const loadWordDetail = (id) => {
 
 const displayWordDetail = (word) => {
   console.log(word);
-  const detailsBox = document.getElementById("details-container")""
-  detailsBox.innerHTML = "hi i am detailsbox"
+  const detailContainer = document.getElementById("details-container");
+  // detailContainer.innerHTML = `${word.meaning}`;
+  document.getElementById("word_details_modal").showModal();
 };
 // loadWordDetail();
