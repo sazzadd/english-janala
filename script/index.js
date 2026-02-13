@@ -108,10 +108,47 @@ const loadWordDetail = (id) => {
     .then((json) => displayWordDetail(json.data));
 };
 
+const createSynonyms = (arr) => {
+  console.log(arr);
+  if (!arr || arr.length === 0) {
+    return `<span class="text-gray-400">No synonyms available</span>`;
+  }
+
+  const synonymElements = arr.map((item) => {
+    return ` <span class="bg-[#378fd729] my-2 px-3 py-2 mt-2 rounded">
+                ${item}</span
+              >`;
+  });
+
+  return synonymElements.join(" ");
+};
+
 const displayWordDetail = (word) => {
   console.log(word);
-  const detailContainer = document.getElementById("details-container");
-  // detailContainer.innerHTML = `${word.meaning}`;
+  const detailsContainer = document.getElementById("details-container");
+  detailsContainer.innerHTML = ` <div class="p-[5px] border border-[#95b7e698] rounded">
+            <div class="space-y-2 p-6">
+              <h3 class="text-3xl font-semibold">
+                ${word.meaning} ( <i class="fa-solid fa-microphone-lines"></i> :${word.pronunciation})
+              </h3>
+              <h4 class="text-[18px] font-semibold">Meaning</h4>
+              <p class="text-[20px] font-bangla">${word.meaning}</p>
+              <h4 class="text-[18px] font-semibold">Example</h4>
+              <p class="text-[18px]">
+               ${word.sentence}
+              </p>
+              <p class="font-bangla my-3">সমার্থক শব্দ গুলো</p>
+
+              <div>
+              ${createSynonyms(word.synonyms)}
+
+              
+              
+              </div>
+
+             
+               </div>
+          </div>`;
   document.getElementById("word_details_modal").showModal();
 };
 // loadWordDetail();
